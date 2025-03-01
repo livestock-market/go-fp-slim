@@ -1,8 +1,9 @@
 # go-fp-slim
 
 ![Build](https://github.com/livestock-market/go-fp-slim/actions/workflows/build.yaml/badge.svg)
-If you like functional programming style, but fp_go seems bloated to you, then this library might be for you.
-This is a Slim or light weight or minimal functional programming utility for Go lang.
+
+If you like functional programming style, but [fp-go](https://github.com/IBM/fp-go) seems bloated to you, then this library might be for you.
+This is a slim, light weight and minimal functional programming utility for Go lang.
 
 ## Installation
 
@@ -29,7 +30,9 @@ Feel free to open issues and PRs.
 
 ## Testing
 ```shell
-go mod tidy // for the first time only
+#for the first time only
+go mod tidy  
+
 go test ./...
 ```
 

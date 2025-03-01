@@ -1,5 +1,13 @@
 # Examples
 
+### Table of Contents
+- [Either](#either)
+- [Option](#option)
+- [Functions](#functions)
+    - [Map](#map)
+    - [Filter](#filter)
+- [XError](#xerror)
+
 ## Either
 
 ```go
@@ -28,6 +36,7 @@ func main() {
     }
 }
 ```
+---
 
 ## Option
 
@@ -79,6 +88,7 @@ func main() {
     fmt.Println(string(jsonResult)) // {"ID":1,"Name":"John Doe","Description":null}
 }
 ```
+---
 
 ## Functions 
 ### Map
@@ -104,6 +114,7 @@ func main() {
     fmt.Println(result) // [1 4 9 16 25]
 }
 ```
+---
 
 ### Filter
 
@@ -127,6 +138,7 @@ func main() {
     fmt.Println(result) // [2 4]
 }
 ```
+---
 
 ## XError 
 
