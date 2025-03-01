@@ -1,0 +1,69 @@
+linters:
+  enable:
+    - fatcontext
+    - misspell
+    - cyclop
+    - bodyclose
+    - bidichk 
+    - prealloc
+    - predeclared
+    - whitespace
+    - revive
+    - spancheck
+    - goconst
+    - gosec
+    - iface
+    - goimports
+
+linters-settings:
+  iface:
+    # List of analyzers.
+    enable:
+      - identical # Identifies interfaces in the same package that have identical method sets.
+      - unused # Identifies interfaces that are not used anywhere in the same package where the interface is defined.
+      - opaque # Identifies functions that return interfaces, but the actual returned value is always a single concrete implementation.
+  goconst:
+    # Minimal length of string constant.
+    min-len: 2
+    # Minimum occurrences of constant string count to trigger issue.
+    min-occurrences: 2
+    # Ignore test files.
+    ignore-tests: true
+    # Look for existing constants matching the values.
+    match-constant: true
+    # Search also for duplicated numbers.
+    numbers: true
+    # Minimum value, only works with goconst.numbers
+    min: 2
+    # Maximum value, only works with goconst.numbers
+    max: 2
+    # Ignore when constant is not used as function argument.
+    ignore-calls: false
+    # Exclude strings matching the given regular expression.
+    # Default: ""
+    # ignore-strings: 'foo.+'
+  spancheck:
+    checks:
+      - end
+      - record-error
+      - set-status
+    ignore-check-signatures:
+      - "telemetry.RecordError"
+  revive:
+    enable-all-rules: true
+    severity: error
+    rules:
+      - name: cognitive-complexity
+        exclude:
+          - ".*_test.go"
+      - name: line-length-limit
+        arguments: [100]
+
+      # - name: function-length
+      #   exclude:
+      #     - ".*_test.go"
+
+issues:
+  exclude-files:
+    - ".*_test.go"
+
