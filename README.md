@@ -1,6 +1,6 @@
 # go-fp-slim
 
-![Build](https://github.com/livestock-market/go-fp-slim/actions/workflows/build.yaml/badge.svg)
+[![Build & Publish](https://github.com/livestock-market/go-fp-slim/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/livestock-market/go-fp-slim/actions/workflows/build.yaml)
 
 If you like functional programming style, but [fp-go](https://github.com/IBM/fp-go) seems bloated to you, then this library might be for you.
 This is a slim, light weight and minimal functional programming utility for Go lang.
