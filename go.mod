@@ -1,4 +1,4 @@
-module github.com/livestock-market/go-fp-slim/gofp
+module github.com/livestock-market/go-fp-slim
 
 go 1.24.0
 
