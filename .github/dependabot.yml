@@ -10,7 +10,7 @@ updates:
     directory: "/" # Location of package manifests
     assignees:
       - "candeemis"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 4
     labels:
       - "dependency-update"
     commit-message:
