@@ -15,14 +15,14 @@ package main
 
 import (
     "fmt"
-    "github.com/livestock-market/go-fp-slim/either"
+    "github.com/prime-livestock/go-fp-slim/gofp"
 )
 
-func failIfNegative(input int) either.Either[int] {
+func failIfNegative(input int) gofp.Either[int] {
     if input < 0 {
-        return either.Left[int]("input is negative")
+        return gofp.Left[int]("input is negative")
     }
-    return either.Right(input)
+    return gofp.Right(input)
 }
 
 func main() {
@@ -45,14 +45,15 @@ package main
 
 import (
     "fmt"
-    "github.com/livestock-market/go-fp-slim/option"
+    "encoding/json"
+    "github.com/prime-livestock/go-fp-slim/gofp"
 )
 
-func divide(a, b int) option.Option[int] {
+func divide(a, b int) gofp.Option[int] {
     if b == 0 {
-        return option.None[int]()
+        return gofp.None[int]()
     }
-    return option.Some(a / b)
+    return gofp.Some(a / b)
 }
 
 type Payload struct {
@@ -99,7 +100,7 @@ package main
 
 import (
     "fmt"
-    "github.com/livestock-market/go-fp-slim/functions"
+    "github.com/prime-livestock/go-fp-slim/gofp"
 )
 
 func square(a) int {
@@ -110,7 +111,7 @@ func main() {
     // slice of integers
     numbers := []int{1, 2, 3, 4, 5}
     // map the slice with square function
-    result := functions.Map(numbers, square)
+    result := gofp.Map(numbers, square)
     fmt.Println(result) // [1 4 9 16 25]
 }
 ```
@@ -123,7 +124,7 @@ package main
 
 import (
     "fmt"
-    "github.com/livestock-market/go-fp-slim/functions"
+    "github.com/prime-livestock/go-fp-slim/gofp"
 )
 
 func isEven(a int) bool {
@@ -134,7 +135,7 @@ func main() {
     // slice of integers
     numbers := []int{1, 2, 3, 4, 5}
     // filter the slice with isEven function
-    result := functions.Filter(numbers, isEven)
+    result := gofp.Filter(numbers, isEven)
     fmt.Println(result) // [2 4]
 }
 ```
@@ -148,14 +149,15 @@ package main
 
 import (
     "fmt"
-    gfp "github.com/livestock-market/go-fp-slim"
+    "net/http"
+    "github.com/prime-livestock/go-fp-slim/gofp"
 )
 
 
 
 func main() {
     actualErr := fmt.Errorf("Something went wrong")
-    xerr := NewXError("Something went horribly wrong", actualErr, http.StatusInternalServerError)
+    xerr := gofp.NewXError("Something went horribly wrong", actualErr, http.StatusInternalServerError)
     fmt.Println(xerr.Message) // Something went horribly wrong
 }
 ```
